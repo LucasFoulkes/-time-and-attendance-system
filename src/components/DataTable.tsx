@@ -28,7 +28,7 @@ function DataTable({ data, actions, showExportButton = true }: DataTableProps) {
     }, [data, columns, searchQuery]);
 
     const handleExport = () => { exportWithState(searchQuery.trim() ? filteredData : data, columns, tableName); };
-    if (!data?.length) return <p>No hay datos</p >; return (
+    if (!data?.length) return <p>No hay datos</p>; return (
         <Card className="min-w-5xl flex flex-col h-[calc(100vh-150px)] p-0 gap-0">
             <CardHeader className="p-0 space-y-4 pb-0 px-4 pt-4 gap-0">
                 <div className="relative w-full max-w-sm">
