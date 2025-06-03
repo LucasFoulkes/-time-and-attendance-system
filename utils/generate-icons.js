@@ -75,5 +75,3 @@ async function generatePNGs() {
 }
 
 generatePNGs();
-
-generatePNGs();
