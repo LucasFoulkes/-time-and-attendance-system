@@ -15,8 +15,12 @@ function AdminPage() {
     const fileInputRef = useRef<HTMLInputElement>(null);
     const { importUsuarios, isImporting } = useImportExcel();
 
-    const usuariosData = usuarios ? Object.assign(usuarios, { _tableName: db.usuarios.name }) : [];
-    const registrosData = registros ? Object.assign(registros, { _tableName: db.registros.name }) : [];
+    const usuariosData = usuarios
+        ? Object.assign([...usuarios], { _tableName: db.usuarios.name })
+        : [];
+    const registrosData = registros
+        ? Object.assign([...registros], { _tableName: db.registros.name })
+        : [];
 
     const handleFileChange = async (event: React.ChangeEvent<HTMLInputElement>) => {
         const file = event.target.files?.[0];
